@@ -1,4 +1,6 @@
 <% @pairs.each do |pair| %>
+<div class="list-delete">
     <%= pair.currency1.name %> / <%= pair.currency2.name %>
-    <%= button_to "Delete", {:action => "destroy", :id => pair.id}, :method => :delete %>
+    <%= button_to "DELETE", {:action => "destroy", :id => pair.id}, :method => :delete %>
+</div>
 <% end %>
