@@ -1,0 +1,15 @@
+<%= form_tag({:action => "create"}, {:method => "post"}) do %>
+  <p>
+    <label for="pair_currency1_id">Currency1:</label>
+    <%= select_tag "pair[currency1_id]", options_from_collection_for_select(@currencies, "id", "name") %>
+  </p>
+  <p>
+    <label for="pair_currency2_id">Currency2:</label>
+    <%= select_tag "pair[currency2_id]", options_from_collection_for_select(@currencies, "id", "name") %>
+  </p>
+  <p>
+    <%= submit_tag "Submit" %>
+  </p>
+<% end %>
+
+
