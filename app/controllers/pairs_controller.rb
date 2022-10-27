@@ -5,6 +5,13 @@ class PairsController < ApplicationController
 
   def manage
     @currencies = Currency.all
+    @pairs = Pair.all
+  end
+
+  def destroy
+    @pair = Pair.find(params[:id])
+    @pair.destroy
+    redirect_to pairs_manage_path
   end
 
   def create
