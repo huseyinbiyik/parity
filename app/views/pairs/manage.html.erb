@@ -1,10 +1,3 @@
-<%= form_tag({:action => "create"}, {:method => "post"}) do %>
-
-    <%= select_tag "pair[currency1_id]", options_from_collection_for_select(@currencies, "id", "name") %>
-
-    <%= select_tag "pair[currency2_id]", options_from_collection_for_select(@currencies, "id", "name") %>
-
-    <%= submit_tag "+" %>
-<% end %>
-
-
+<%= render "new" %>
+<%= render "delete"%>
+<%= link_to "Display", :action => "display" %>
