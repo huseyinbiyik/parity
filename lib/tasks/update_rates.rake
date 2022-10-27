@@ -1,7 +1,7 @@
 require 'uri'
 require 'net/http'
 
-desc 'Print reminder about eating more fruit.'
+desc 'Update currency rates in the database'
 task update_rates: :environment do
   url = URI('https://api.apilayer.com/fixer/latest?')
 
@@ -13,7 +13,13 @@ task update_rates: :environment do
 
   response = https.request(request)
   rates = JSON.parse(response.body)['rates']
-  rates.each do |rate|
-    Currency.create(name: rate[0], rate: rate[1])
+  rates.each do |key, value|
+    currency = Currency.find_by(name: key)
+    if currency
+      currency.update(rate: value)
+    else
+      Currency.create(name: key, rate: value)
+    end
   end
+  puts 'Currency rates updated'
 end
