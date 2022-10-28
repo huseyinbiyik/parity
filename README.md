@@ -23,7 +23,7 @@ To get a local copy up and running follow these simple example steps.
 6- Go to command line and run `rails s`. <br>
 7- Run `rails db:create` to create database. <br>
 8- Run `rails db:migrate` to migrate database. <br>
-9- Run `rails rate:update` or `rake rate:update` to fetch and update the rates in the database. <br>
+9- Run `rails rates:update` or `rake rates:update` to fetch and update the rates in the database. <br>
 10- Open your browser and go to `http://localhost:3000/` <br>
 
 
