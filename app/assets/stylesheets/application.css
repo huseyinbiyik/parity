@@ -38,3 +38,31 @@ body {
   color: white;
   font-weight: 200;
 }
+
+/* Notifications/flashes  */
+.notice-bar {
+  height: 30px;
+}
+
+.notice {
+  animation: appear-then-fade 4s both;
+  background-color: #036500;
+  color: white;
+}
+
+.alert {
+  animation: appear-then-fade 4s both;
+  background-color: #ff0000;
+  color: white;
+}
+
+@keyframes appear-then-fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  5%,
+  60% {
+    opacity: 1;
+  }
+}

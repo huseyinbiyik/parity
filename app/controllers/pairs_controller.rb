@@ -12,6 +12,7 @@ class PairsController < ApplicationController
     @pair = Pair.find(params[:id])
     @pair.destroy
     redirect_to pairs_manage_path
+    flash[:notice] = 'Pair deleted successfully.'
   end
 
   def create
@@ -20,7 +21,7 @@ class PairsController < ApplicationController
       flash[:notice] = 'Pair created successfully.'
       redirect_to action: 'manage'
     else
-      flash[:notice] = 'Pair creation failed.'
+      flash[:alert] = 'Pair creation failed.'
       redirect_to action: 'manage'
     end
   end
