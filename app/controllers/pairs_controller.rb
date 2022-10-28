@@ -1,11 +1,11 @@
 class PairsController < ApplicationController
   def display
-    @pairs = Pair.all
+    @pairs = Pair.all.includes(:currency1, :currency2)
   end
 
   def manage
     @currencies = Currency.all
-    @pairs = Pair.all
+    @pairs = Pair.all.includes(:currency1, :currency2)
   end
 
   def destroy
