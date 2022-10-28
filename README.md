@@ -7,6 +7,7 @@
 - Ruby
 - Ruby on Rails
 -  PostgreSQL
+- Fixer API
 -  RSpec
 -  Capybara
 
