@@ -1,0 +1,23 @@
+<div class="nav">
+<%= link_to "➣Manage Currencies", :action => "manage" %>
+</div>
+
+
+<table id="currency-rate">
+<thead>
+  <tr>
+    <th>Currency1</th>
+    <th>Currency2</th>
+    <th>Rate</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @pairs.each do |pair| %>
+    <tr>
+      <td><%= pair.currency1.name %></td>
+      <td><%= pair.currency2.name %></td>
+      <td><%=  (pair.currency2.rate / pair.currency1.rate).round(4) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
