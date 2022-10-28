@@ -28,11 +28,9 @@ thead {
 }
 
 a {
-  border: 0.5px solid white;
   font-weight: 100;
   color: white;
   padding: 5px;
-  text-decoration: none;
 }
 
 a:hover {
