@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PairsController < ApplicationController
   def display
     @pairs = Pair.all.includes(:currency1, :currency2)
@@ -19,11 +21,10 @@ class PairsController < ApplicationController
     @pair = Pair.new(pair_params)
     if @pair.save
       flash[:notice] = 'Pair created successfully.'
-      redirect_to action: 'manage'
     else
       flash[:alert] = 'Pair creation failed.'
-      redirect_to action: 'manage'
     end
+    redirect_to action: 'manage'
   end
 
   def pair_params
