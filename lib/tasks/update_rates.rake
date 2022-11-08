@@ -9,7 +9,7 @@ namespace :rates do
     https.use_ssl = true
 
     request = Net::HTTP::Get.new(url)
-    request['apikey'] = 'UghedvrG1TExQ71PIZOhZ5u9Nyep3nr3'
+    request['apikey'] = ENV['API_KEY']
 
     response = https.request(request)
     rates = JSON.parse(response.body)['rates']
