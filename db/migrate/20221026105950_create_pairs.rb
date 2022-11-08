@@ -1,7 +1,7 @@
+# frozen_string_literal: true
+
 class CreatePairs < ActiveRecord::Migration[7.0]
   def change
-    create_table :pairs do |t|
-      t.timestamps
-    end
+    create_table :pairs, &:timestamps
   end
 end
